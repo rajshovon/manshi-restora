@@ -1,37 +1,45 @@
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { CgProfile } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
+
+    const [navItems, setNavItems] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/headernavbar')
+            .then(res => res.json())
+            .then(data => setNavItems(data))
+            .catch(error => console.log(error))
+    }, []);
+    // console.log(navItems);
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="#home">
+                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black'>man<span className='text-danger'>shi</span></Link>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Separated link
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                        <div className='px-5 mx-2'></div>
+                        <Nav className="mx-auto pt-3 fw-semibold">
+                            {
+                                navItems.map(navItem => <p key={navItem.id}>
+
+                                    <Link to={`/navItem/${navItem.path}`} className='text-decoration-none text-black  px-3 '>{navItem.name}</Link>
+
+                                </p>)
+                            }
+
                         </Nav>
-                        <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+                        <Nav className='  fw-semibold'>
+                            <Link to="/login" className='text-white text-decoration-none'> <CgProfile /> Login</Link>
+                            <span className='px-2'>or</span>
+                            <Link to='/singup' className='text-white text-decoration-none'> SingUp</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
