@@ -77,67 +77,71 @@ const Registration = () => {
     }
 
     return (
-        <div className='d-flex justify-content-center align-items-center py-5' style={{ backgroundColor: "rgba(0,0,255,.1)" }}>
-            <div className='w-50 bg-white p-5 py-5 rounded' >
-                <h5 className='text-center fs-2 fw-bold'>Register your account</h5>
-                <hr />
-                <Form onSubmit={handlerSingUp} className="w-75 mx-auto">
-                    <Form.Group className="mb-3"  >
-                        <ToastContainer />
-                        <Form.Label className="fw-semibold fs-6">Your Name</Form.Label>
-                        <Form.Control className="border-0" style={{ backgroundColor: "rgba(0,0,255,.1)" }} type="text" name='name' required placeholder="Enter your name" />
-                    </Form.Group>
-                    <Form.Group className="mb-3"  >
-                        <Form.Label className="fw-semibold fs-6">Email address</Form.Label>
-                        <Form.Control className="border-0" style={{ backgroundColor: "rgba(0,0,255,.1)" }} type="email" name='email' required placeholder="Enter your email address" />
-                    </Form.Group>
-                    <Form.Group className="mb-3"  >
-                        <Form.Label className="fw-semibold fs-6" htmlFor="inputPassword5">Password</Form.Label>
-                        <Form.Control
-                            type="password"
-                            id="inputPassword5"
-                            aria-describedby="passwordHelpBlock"
-                            placeholder="Enter your password"
-                            className="border-0"
-                            style={{ backgroundColor: "rgba(0,0,255,.1)" }}
-                            name='password'
-                            required
-                        />
-                    </Form.Group>
-                    <Form.Group className="mb-3"  >
-                        <Form.Label className="fw-semibold fs-6" htmlFor="inputPassword6">Password</Form.Label>
-                        <Form.Control
-                            type="password"
-                            id="inputPassword6"
-                            aria-describedby="passwordHelpBlock"
-                            placeholder="Enter your password"
-                            className="border-0"
-                            style={{ backgroundColor: "rgba(0,0,255,.1)" }}
-                            name='confrom'
-                            required
-                        />
-                    </Form.Group>
-
-
-                    <div className="mb-3">
-                        <Form.Check // prettier-ignore
-                            required
-                            type='checkbox'
-                            label='Accept Term & Conditions'
-                        />
-                    </div>
-
-                    <div className="d-grid my-4">
-
-                        <Button type='submit' variant="secondary" size="lg">
-                            Register
-                        </Button>
-                    </div>
-                    <h6 className='text-center'>You Have An Account ? <Link to='/login' className='text-decoration-none text-danger fw-semibold'>Login</Link></h6>
-                </Form>
-
+        <>
+            <div className='login-banner-section'>
             </div>
-        </div >
+            <div className='d-flex justify-content-center align-items-center py-5' style={{ backgroundColor: "rgba(0,0,255,.1)" }}>
+                <div className='w-50 bg-white p-5 py-5 rounded' >
+                    <h5 className='text-center fs-2 fw-bold'>Register your account</h5>
+                    <hr />
+                    <Form onSubmit={handlerSingUp} className="w-75 mx-auto">
+                        <Form.Group className="mb-3"  >
+                            <ToastContainer />
+                            <Form.Label className="fw-semibold fs-6">Your Name</Form.Label>
+                            <Form.Control className="border-0" style={{ backgroundColor: "rgba(0,0,255,.1)" }} type="text" name='name' required placeholder="Enter your name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3"  >
+                            <Form.Label className="fw-semibold fs-6">Email address</Form.Label>
+                            <Form.Control className="border-0" style={{ backgroundColor: "rgba(0,0,255,.1)" }} type="email" name='email' required placeholder="Enter your email address" />
+                        </Form.Group>
+                        <Form.Group className="mb-3"  >
+                            <Form.Label className="fw-semibold fs-6" htmlFor="inputPassword5">Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                id="inputPassword5"
+                                aria-describedby="passwordHelpBlock"
+                                placeholder="Enter your password"
+                                className="border-0"
+                                style={{ backgroundColor: "rgba(0,0,255,.1)" }}
+                                name='password'
+                                required
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3"  >
+                            <Form.Label className="fw-semibold fs-6" htmlFor="inputPassword6">Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                id="inputPassword6"
+                                aria-describedby="passwordHelpBlock"
+                                placeholder="Enter your password"
+                                className="border-0"
+                                style={{ backgroundColor: "rgba(0,0,255,.1)" }}
+                                name='confrom'
+                                required
+                            />
+                        </Form.Group>
+
+
+                        <div className="mb-3">
+                            <Form.Check // prettier-ignore
+                                required
+                                type='checkbox'
+                                label='Accept Term & Conditions'
+                            />
+                        </div>
+
+                        <div className="d-grid my-4">
+
+                            <Button type='submit' variant="secondary" size="lg">
+                                Register
+                            </Button>
+                        </div>
+                        <h6 className='text-center'>You Have An Account ? <Link to='/login' className='text-decoration-none text-danger fw-semibold'>Login</Link></h6>
+                    </Form>
+
+                </div>
+            </div >
+        </>
     );
 };
 

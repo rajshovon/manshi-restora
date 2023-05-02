@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CgProfile } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider.jsx';
 import './Header.css';
 
 const Header = () => {
-
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user, logOut);
     const [navItems, setNavItems] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/headernavbar')
@@ -16,6 +19,16 @@ const Header = () => {
             .catch(error => console.log(error))
     }, []);
     // console.log(navItems);
+
+    const handlerLogOut = () => {
+        logOut()
+            .then(result => { console.log(result); }
+            )
+            .catch(error => console.log(error)
+            )
+    }
+
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg">
@@ -37,9 +50,20 @@ const Header = () => {
 
                         </Nav>
                         <Nav className='  fw-semibold'>
-                            <Link to="/login" className='text-white text-decoration-none'> <CgProfile /> Login</Link>
-                            <span className='px-2'>or</span>
-                            <Link to='/register' className='text-white text-decoration-none'> SingUp</Link>
+                            {user &&
+                                <Link className='text-decoration-none text-dark fw-semibold'><Image style={{ width: "32px", height: "32px" }} src={user.photoURL} roundedCircle /> {user.displayName}</Link>
+                            }
+
+                            {user ?
+                                <Button variant="secondary"><Link onClick={handlerLogOut} className='text-decoration-none text-white fw-semibold'>Logout</Link></Button> : <>
+
+                                    <Link to="/login" className='text-white text-decoration-none'> <CgProfile /> Login</Link>
+                                    <span className='px-2'>or</span>
+                                    <Link to='/register' className='text-white text-decoration-none'> SingUp</Link>
+                                </>
+                            }
+
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
