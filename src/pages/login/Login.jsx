@@ -3,13 +3,14 @@ import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from './../../contexts/AuthProvider';
 import './Login.css';
 
 
 const Login = () => {
 
-    const { userLogin, resetPassword } = useContext(AuthContext);
+    const { userLogin, resetPassword, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const froms = location.state?.from?.pathname || "/";
@@ -53,11 +54,34 @@ const Login = () => {
             })
     }
 
+    const handleLoginwithGoogle = () => {
+        loginWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleGithubLogin = () => {
+        loginWithGithub()
+            .then(result => {
+
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+
+            })
+    }
 
     return (
-        <>   
-        <div className='login-banner-section'>
-        </div>
+        <>
+            <div className='login-banner-section'>
+            </div>
             <div className='d-flex justify-content-center align-items-center' style={{ height: "100vh", backgroundColor: "rgba(0,0,255,.1)" }}>
                 <div className='w-50 bg-white p-5 rounded' >
                     <h5 className='text-center fs-2 fw-bold'>Login your account</h5>
@@ -90,7 +114,15 @@ const Login = () => {
                         </div>
                         <h6 className='text-center'>Dont’t Have An Account ? <Link to='/register' className='text-decoration-none text-danger fw-semibold'>Register</Link></h6>
                     </Form>
+                    <div className='d-flex justify-contant-center align-items-center gap-3'>
 
+                        <div className='w-50'>
+                            <Button onClick={handleLoginwithGoogle} className='my-2  w-100' variant="outline-primary"><FaGoogle /> Login with Google</Button>
+                        </div>
+                        <div className='w-50'>
+                            <Button onClick={handleGithubLogin} className='px-3 w-100' variant="outline-secondary" ><FaGithub />Login with Github</Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

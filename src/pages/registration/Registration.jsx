@@ -7,11 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from './../../contexts/AuthProvider';
 
 
+
 const Registration = () => {
 
 
 
-    const { createaccount, emailVarification } = useContext(AuthContext);
+    const { createaccount, emailVarification, } = useContext(AuthContext);
     // console.log(createaccount);
     const navigate = useNavigate();
     const location = useLocation();
@@ -76,6 +77,7 @@ const Registration = () => {
 
     }
 
+
     return (
         <>
             <div className='login-banner-section'>
@@ -138,7 +140,7 @@ const Registration = () => {
                         </div>
                         <h6 className='text-center'>You Have An Account ? <Link to='/login' className='text-decoration-none text-danger fw-semibold'>Login</Link></h6>
                     </Form>
-
+                    
                 </div>
             </div >
         </>
