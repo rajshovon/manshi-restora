@@ -43,11 +43,15 @@ const Login = () => {
         const email = (emailRef.current.value);
         if (!email) {
             alert("please provide uour email ");
+        } else if (email) {
+            alert("please Chieck Your Email address");
+
         }
         resetPassword(email)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
             })
             .catch(error => {
                 console.log(error);
@@ -103,7 +107,7 @@ const Login = () => {
                             required
                         />
                         <div className="my-2">
-                            <p> <small className='text-danger'>Forgate Password<button className='btn btn-link text-decoration-none text-danger fw-normal' onClick={handleResetPassword}>Reset Password</button></small></p>
+                            <p> <small className=''>Forgate Password<button className='btn btn-link text-decoration-none text-danger ' onClick={handleResetPassword}>Reset Password</button></small></p>
                         </div>
                         <div className="d-grid my-4">
 

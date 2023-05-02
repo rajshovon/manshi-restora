@@ -4,35 +4,42 @@ import { MdLocationOn } from "react-icons/md";
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import CoreFeatures from './coreFeatures/CoreFeatures.jsx';
 const Home = () => {
     return (
-        <div className='banner-section'>
+        <div>
             <div className='banner-section'>
-                <div className='text-section'>
-                    <h1 className='fw-bld'>Enjoy Our <br /> Delicious Meal</h1>
-                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. proin ac rutrum neque, vel congue tellus duis vanenatis nisi ligulavarius.</p>
-                    <div className='d-flex gap-3 justify-content-center align-items-center dropdown-field'>
-                        <Dropdown>
-                            <Dropdown.Toggle className='find-btn' variant="white" id="dropdown-basic">
-                                Ahmedabad
-                            </Dropdown.Toggle>
+                <div className='banner-section'>
+                    <div className='text-section'>
+                        <h1 className='fw-bld'>Enjoy Our <br /> Delicious Meal</h1>
+                        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. proin ac rutrum neque, vel congue tellus duis vanenatis nisi ligulavarius.</p>
 
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                        <div>
-                            <Link className='text-secondary fw-semibold text-decoration-none' to='/'> <MdLocationOn /> Drop Your Location</Link>
-                        </div>
-                        <div>
-                            <Button className='find-btn' variant="outline-info border-0">Find Restaurant</Button>
-                        </div>
+                        <div className='d-flex gap-3 justify-content-center align-items-center dropdown-field'>
+                            <Dropdown>
+                                <Dropdown.Toggle className='find-btn-ah' variant="white" id="dropdown-basic">
+                                    Ahmedabad
+                                </Dropdown.Toggle>
 
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            <div>
+                                <Link className='text-secondary fw-semibold text-decoration-none' to='/'> <MdLocationOn /> Drop Your Location</Link>
+                            </div>
+                            <div className='ms-auto'>
+                                <Button className='find-btn' type='btn'>Find Restaurant</Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            {/* core future */}
+            <CoreFeatures></CoreFeatures>
+
         </div>
     );
 };

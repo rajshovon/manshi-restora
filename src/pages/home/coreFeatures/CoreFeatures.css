@@ -1,0 +1,12 @@
+.frture-food {
+  padding: 5px 15px;
+  border-radius: 50px 50px;
+  box-shadow: 1px 0px 3px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.frture-food:hover {
+  color: aliceblue;
+  background-color: #fd831e;
+}

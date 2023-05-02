@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CgProfile } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
+import Logo from '../../../../public/logo/namshi.png';
 import { AuthContext } from '../../../contexts/AuthProvider.jsx';
 import './Header.css';
 
@@ -33,8 +34,9 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black'>man<span className='text-danger'>shi</span></Link>
+                    <Navbar.Brand href="#">
+                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi'><Image src={Logo} /></Link>
+                        {/* <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black'>man<span className='text-danger'>shi</span></Link> */}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -49,16 +51,16 @@ const Header = () => {
                             }
 
                         </Nav>
-                        <Nav className='  fw-semibold'>
+                        <Nav className=' d-flex justify-content-center align-items-center  fw-semibold'>
                             {user &&
-                                <Link className='text-decoration-none text-dark fw-semibold'><Image style={{ width: "32px", height: "32px" }} src={user.photoURL} roundedCircle /> {user.displayName}</Link>
+                                <Link className='text-decoration-none text-dark fw-semibold'><Image style={{ width: "32px", height: "32px" }} src={user.photoURL} roundedCircle /></Link>
                             }
 
                             {user ?
-                                <Button variant="secondary"><Link onClick={handlerLogOut} className='text-decoration-none text-white fw-semibold'>Logout</Link></Button> : <>
+                                <Button variant="btn"><Link onClick={handlerLogOut} className='text-decoration-none text-white fw-semibold'>Logout</Link></Button> : <>
 
                                     <Link to="/login" className='text-white text-decoration-none'> <CgProfile /> Login</Link>
-                                    <span className='px-2'>or</span>
+                                    <span className='px-2 text-danger'>or</span>
                                     <Link to='/register' className='text-white text-decoration-none'> SingUp</Link>
                                 </>
                             }

@@ -4,7 +4,7 @@
   background-image: url(../../../public/bg.jpg);
   background-repeat: no-repeat;
   background-size: auto;
-  margin-top: -80px;
+  margin-top: -90px;
   background-size: 100vw 90vh;
   padding-top: 100px;
 }
@@ -27,11 +27,36 @@
 }
 .dropdown-field {
   width: 43%;
-  padding: 10px 0;
   border-radius: 50px 50px;
   box-shadow: 1px 1px 4px #000;
   margin-top: 20px;
 }
-.find-btn {
+.find-btn-ah {
   border-radius: 50px 50px;
+
+  border: 0px;
+}
+.find-btn {
+  padding: 10px 20px;
+  background-color: #fd831e;
+  border-radius: 50px 50px;
+  border: 0px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.find-btn:hover {
+  background-color: #f58c36;
+}
+@media (max-width: 575.98px) {
+  .text-section {
+    background-color: #ff7301a8;
+    padding: 20px 25px;
+    text-align: center;
+  }
+  .text-section p {
+    width: 100%;
+  }
+  .dropdown-field {
+    width: 100%;
+  }
 }

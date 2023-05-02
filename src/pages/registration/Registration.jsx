@@ -53,6 +53,7 @@ const Registration = () => {
             return;
         } else {
             toast("Success fully resgister thank you!!");
+            alert("Check Your email and Vearyfied your Email address");
         }
 
 
@@ -63,6 +64,7 @@ const Registration = () => {
                 emailVarification(loggedUser);
                 console.log(loggedUser);
                 navigate(froms, { replace: true });
+
 
             })
             .catch(error => {
@@ -140,7 +142,7 @@ const Registration = () => {
                         </div>
                         <h6 className='text-center'>You Have An Account ? <Link to='/login' className='text-decoration-none text-danger fw-semibold'>Login</Link></h6>
                     </Form>
-                    
+
                 </div>
             </div >
         </>
