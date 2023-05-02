@@ -3,6 +3,8 @@ import { MdLocationOn } from "react-icons/md";
 
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ManageServices from '../manageServices/ManageServices.jsx';
+import ServicesTable from '../manageServices/servicesTable/ServicesTable.jsx';
 import './Home.css';
 import CoreFeatures from './coreFeatures/CoreFeatures.jsx';
 const Home = () => {
@@ -39,7 +41,10 @@ const Home = () => {
 
             {/* core future */}
             <CoreFeatures></CoreFeatures>
-
+            {/* manege services */}
+            <ManageServices></ManageServices>
+            {/* services table */}
+            <ServicesTable></ServicesTable>
         </div>
     );
 };

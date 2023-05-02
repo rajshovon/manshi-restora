@@ -12,9 +12,9 @@ const CoreFeatures = () => {
     }, [])
 
     return (
-        <div className="my-5 py-5 text-center d-flex justify-content-center align-items-center gap-3">
+        <div className="my-5 py-5 text-center d-md-flex mx-5 mx-md-0 justify-content-center align-items-center gap-3">
             {
-                categories.map(categorie => <div className="border gap-3 frture-food " key={categorie.id}>
+                categories.map(categorie => <div className="border gap-3 frture-food my-2" key={categorie.id}>
 
                     <Image style={{ width: "32px", height: "32px" }} src={categorie.img} />
 
