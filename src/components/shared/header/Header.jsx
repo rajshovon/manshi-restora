@@ -30,7 +30,7 @@ const Header = () => {
                             {
                                 navItems.map(navItem => <p key={navItem.id}>
 
-                                    <Link to={`/navItem/${navItem.path}`} className='text-decoration-none text-black  px-3 '>{navItem.name}</Link>
+                                    <Link to={`/${navItem.path}`} className='text-decoration-none text-black  px-3 '>{navItem.name}</Link>
 
                                 </p>)
                             }
@@ -39,7 +39,7 @@ const Header = () => {
                         <Nav className='  fw-semibold'>
                             <Link to="/login" className='text-white text-decoration-none'> <CgProfile /> Login</Link>
                             <span className='px-2'>or</span>
-                            <Link to='/singup' className='text-white text-decoration-none'> SingUp</Link>
+                            <Link to='/register' className='text-white text-decoration-none'> SingUp</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
