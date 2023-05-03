@@ -7,6 +7,7 @@ import ManageServices from '../manageServices/ManageServices.jsx';
 import ServicesTable from '../manageServices/servicesTable/ServicesTable.jsx';
 import './Home.css';
 import CoreFeatures from './coreFeatures/CoreFeatures.jsx';
+import Chefs from './topChefs/Chefs.jsx';
 const Home = () => {
     return (
         <div>
@@ -45,6 +46,8 @@ const Home = () => {
             <ManageServices></ManageServices>
             {/* services table */}
             <ServicesTable></ServicesTable>
+            {/* chefs section */}
+            <Chefs></Chefs>
         </div>
     );
 };

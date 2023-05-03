@@ -29,7 +29,7 @@ const Login = () => {
         userLogin(email, password)
             .then(Result => {
                 const loggedUser = Result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 // console.log('samaul', user);
                 navigate(froms, { replace: true });
             })

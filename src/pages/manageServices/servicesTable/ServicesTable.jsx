@@ -16,13 +16,14 @@ const ServicesTable = () => {
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(error => console.log(error))
-    }, [])
+    }, []);
     useEffect(() => {
         fetch('http://localhost:5000/qpfooddetails')
             .then(res => res.json())
             .then(data => setQpfooddetails(data))
-            .catch(error => console.log(error))
-    }, []);
+            .catch(error => console.log(error));
+    }, [])
+
 
 
     return (
@@ -34,20 +35,20 @@ const ServicesTable = () => {
                         <div className="my-2  text-center gap-3">
                             {
                                 categories.map(categorie => <Link to={categorie.path} className="border d-block text-decoration-none gap-3 frture-food my-2" key={categorie.id}>
-                                    <Image style={{ width: "32px", height: "32px" }} src={categorie.img} />
+                                    <Image className='' style={{ width: "32px", height: "32px" }} src={categorie.img} />
                                     <span className="px-2"> {categorie.name}</span>
                                 </Link>)
                             }
                         </div>
                     </Col>
                     <Col sm={8}>
-                        <Container>
+                        <Container className='w-100 mt-5 mt-md-0 text-center mx-auto'>
 
 
 
-                            <Row xs={1} md={2} className="g-4">
+                            <Row xs={1} md={2} className="g-4 mx-auto">
                                 {
-                                    qpfooddetails.map(qpfooddetail => <FoodDetails key={qpfooddetail.idMeal} qpfooddetail={qpfooddetail}></FoodDetails>)
+                                    qpfooddetails.slice(0, 4).map(qpfooddetail => <FoodDetails key={qpfooddetail.idMeal} qpfooddetail={qpfooddetail}></FoodDetails>)
                                 }
 
 

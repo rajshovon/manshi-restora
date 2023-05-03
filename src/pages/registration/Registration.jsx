@@ -26,7 +26,7 @@ const Registration = () => {
         const email = from.email.value;
         const password = from.password.value;
         const confrom = from.confrom.value;
-        console.log(name, email, password, confrom);
+        // console.log(name, email, password, confrom);
 
         if (password !== confrom) {
             toast("Password did not match");
@@ -48,7 +48,7 @@ const Registration = () => {
             return;
         }
         else if (password.length < 6) {
-            console.log(password.length);
+            // console.log(password.length);
             toast("password give minimum 6 digit");
             return;
         } else {
@@ -62,7 +62,7 @@ const Registration = () => {
             .then(Result => {
                 const loggedUser = Result.user;
                 emailVarification(loggedUser);
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 navigate(froms, { replace: true });
 
 

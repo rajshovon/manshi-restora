@@ -11,7 +11,9 @@ import './Header.css';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user, logOut);
+    // console.log(user, logOut);
+
+
     const [navItems, setNavItems] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/headernavbar')
@@ -40,7 +42,7 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <div className='px-5 mx-2'></div>
+                        <div className=''></div>
                         <Nav className="mx-auto pt-3 fw-semibold">
                             {
                                 navItems.map(navItem => <p key={navItem.id}>
