@@ -50,10 +50,12 @@ const AuthProvider = ({ children }) => {
     //sing in with google
 
     const loginWithGoogle = () => {
+        setLoader(true);
         return signInWithPopup(auth, provider);
     }
     //sing in with github
     const loginWithGithub = () => {
+        setLoader(true);
         return signInWithPopup(auth, gitProvider)
     }
     // send email varification]

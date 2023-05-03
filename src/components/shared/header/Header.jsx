@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CgProfile } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
-import Logo from '../../../../public/logo/namshi.png';
 import { AuthContext } from '../../../contexts/AuthProvider.jsx';
+import ActiveLink from './../ActiveLink/ActiveLink';
 import './Header.css';
 
 const Header = () => {
@@ -37,7 +37,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#">
-                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi'><Image src={Logo} /></Link>
+                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi'><Image src='https://i.ibb.co/J3yppZL/namshi.png' /></Link>
                         {/* <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black'>man<span className='text-danger'>shi</span></Link> */}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -47,7 +47,7 @@ const Header = () => {
                             {
                                 navItems.map(navItem => <p key={navItem.id}>
 
-                                    <Link to={`/${navItem.path}`} className='text-decoration-none text-black  px-3 '>{navItem.name}</Link>
+                                    <ActiveLink to={`/${navItem.path}`} >{navItem.name}</ActiveLink >
 
                                 </p>)
                             }

@@ -1,0 +1,19 @@
+.blog-bg {
+  width: 100%;
+  height: 50vh;
+  background-image: url("https://i.ibb.co/hXGpPT6/pd-bg.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-top: -90px;
+  background-size: 100vw 50vh;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-bg h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 31px;
+}

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useLoaderData } from 'react-router-dom';
 
+
 const SngleChefs = () => {
     const chefsDetails = useLoaderData();
-    const { id, picture, name, yearsOfExperience, numOfRecipes, likes, views, recipes, } = chefsDetails;
+    const { id, picture, name, yearsOfExperience, numOfRecipes, likes, views, recipes, pictureRecipe } = chefsDetails;
     console.log(recipes[0].instructions);
     const recipys = recipes[0].ingredients;
     const instructions = recipes[0].instructions
@@ -21,10 +23,38 @@ const SngleChefs = () => {
             <div className='login-banner-section'>
 
             </div>
+            <Carousel variant="dark" style={{ height: "450px" }}>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100 img-fluid bg-opacity-10" style={{ height: "450px" }}
+                        src="https://img.freepik.com/free-psd/food-menu-restaurant-web-banner-template_106176-812.jpg?size=626&ext=jpg&ga=GA1.1.2050665809.1674069960&semt=ais"
+                        alt="First slide"
+                    />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100 img-fluid" style={{ height: "450px" }}
+                        src="https://img.freepik.com/free-psd/web-banner-template-japanese-restaurant_23-2148203260.jpg?size=626&ext=jpg&ga=GA1.1.2050665809.1674069960&semt=ais"
+                        alt="Second slide"
+                    />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100 img-fluid" style={{ height: "450px" }}
+                        src="https://img.freepik.com/free-psd/web-banner-template-japanese-restaurant_23-2148203257.jpg?size=626&ext=jpg&ga=GA1.1.2050665809.1674069960&semt=ais"
+                        alt="Third slide"
+                    />
+
+                </Carousel.Item>
+            </Carousel>
             <Container className="my-5">
                 <Row>
                     <Col sm={4} >
-                        <Image style={{ width: "350px", height: "350px" }} src={picture} thumbnail />
+                        <Image style={{ width: "350px", height: "350px", marginTop: "-200px", position: "absolute" }} src={picture} roundedCircle />
+                        <Image style={{ width: "350px", height: "350px", marginTop: "200px", position: "absolute" }} src={pictureRecipe} roundedCircle />
+
                     </Col>
                     <Col>
                         <Card>
@@ -45,7 +75,8 @@ const SngleChefs = () => {
                                 </div>
                                 <Card.Text className='d-flex'>
                                     <div className='w-50'>
-
+                                        <h4>ingredients </h4>
+                                        <div className='w-50'>     <hr /></div>
                                         {
                                             recipys.map(recipy => <div>
                                                 <p>{recipy}</p>
@@ -53,6 +84,8 @@ const SngleChefs = () => {
                                         }
                                     </div>
                                     <div className='w-50'>
+                                        <h4> instructions</h4>
+                                        <div className='w-50'>     <hr /></div>
                                         {
                                             instructions.map(instruction => <div>
                                                 <p>{instruction}</p>
