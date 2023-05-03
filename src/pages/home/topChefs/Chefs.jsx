@@ -16,7 +16,8 @@ const Chefs = () => {
 
     return (
         <div>
-            <div className='w-50 mx-auto text-center my-5 py-5'>
+
+            <div className='w-50 mx-auto text-center mt-2 pt-3'>
                 <h1>chef</h1>
                 <small>A chef is a professional cook and tradesman who is proficient in all aspects of food preparation, often focusing on a particular cuisine. The word "chef" is derived from the term chef de cuisine (French pronunciation: ​[ʃɛf də kɥizin]), the director or head of a kitchen.</small>
             </div>
