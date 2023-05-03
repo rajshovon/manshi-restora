@@ -1,0 +1,9 @@
+.chef-contsiner {
+  width: 50%;
+}
+@media (max-width: 767.98px) {
+  .chef-contsiner {
+    width: 100%;
+    padding: 10px 10px;
+  }
+}

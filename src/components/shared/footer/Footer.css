@@ -28,3 +28,11 @@
 .social-link-images span:hover {
   color: rgb(250, 133, 0);
 }
+@media (max-width: 767.98px) {
+  .footer-bg {
+    height: fit-content;
+    margin: 20px 10px;
+    background-color: rgb(35, 28, 44);
+    text-align: center;
+  }
+}

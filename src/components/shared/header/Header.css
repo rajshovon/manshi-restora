@@ -7,3 +7,9 @@
   margin: 0px;
   padding: 0px;
 }
+
+@media (max-width: 767.98px) {
+  .header-bg {
+    background-color: rgb(168, 162, 173);
+  }
+}

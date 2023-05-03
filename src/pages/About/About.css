@@ -16,3 +16,9 @@
   font-weight: 700;
   font-size: 31px;
 }
+
+@media (max-width: 767.98px) {
+  .about-bg {
+    background-image: none;
+  }
+}

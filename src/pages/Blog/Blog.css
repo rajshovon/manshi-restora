@@ -17,3 +17,9 @@
   font-weight: 700;
   font-size: 31px;
 }
+
+@media (max-width: 767.98px) {
+  .blog-bg {
+    background-image: none;
+  }
+}

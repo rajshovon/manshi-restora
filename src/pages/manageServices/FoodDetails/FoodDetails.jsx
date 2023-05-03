@@ -10,7 +10,7 @@ const FoodDetails = ({ qpfooddetail }) => {
     const { idMeal, strMeal, strMealThumb, rating, vew } = qpfooddetail;
     // console.log(rating);
     return (
-        <Card className='text-center' style={{ width: '21rem', height: "220px", padding: "0px", margin: "10px", textAlign: "center" }}>
+        <Card className='text-center mx-auto' style={{ width: '21rem', height: "220px", padding: "0px", margin: "10px", textAlign: "center" }}>
             <Card.Img style={{ width: '22rem', height: "170px", marginLeft: "-8px", marginTop: "-8px" }} variant="top" src={strMealThumb} />
             <Card.Body className="p-0 m-0 d-flex justify-content-between mx-3 align-items-center">
                 <Card.Title className="py-0 my-0 px-3 text-start">{strMeal}

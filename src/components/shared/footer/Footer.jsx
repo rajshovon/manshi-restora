@@ -30,10 +30,10 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col sm>
-                        <div className='d-flex'>
-                            <div className='pe-3'>
+                        <div className='d-flex py-3 py-md-0 my-5 my-md-0 '>
+                            <div className='pe-3 '>
                                 <h3 className='text-white' style={{ fontFamily: "cursive" }}>Links</h3>
-                                <div className='w-25'>
+                                <div className='w-md-25 w-50 '>
                                     <hr style={{ color: "white", marginBottom: "0px" }} />
                                 </div>
                                 <Link className='text-decoration-none text-white' to='/'>Home</Link><br />
@@ -44,7 +44,7 @@ const Footer = () => {
                             </div>
                             <div>
                                 <h3 className='text-white' style={{ fontFamily: "cursive" }}>Other Links</h3>
-                                <div className='w-25'>
+                                <div className='w-md-25 w-50'>
                                     <hr style={{ color: "white", marginBottom: "0px" }} />
                                 </div>
                                 <Link className='text-decoration-none text-white' to='/'>My Account</Link><br />

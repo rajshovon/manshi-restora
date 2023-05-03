@@ -34,7 +34,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg">
+            <Navbar className='header-bg' collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#">
                         <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi'><Image loading="lazy" src='https://i.ibb.co/J3yppZL/namshi.png' /></Link>

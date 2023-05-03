@@ -12,7 +12,7 @@ const ChefsDetails = ({ chef }) => {
 
     return (
         <Col>
-            <CardGroup className='my-5 ' style={{ width: '18rem', height: "400px" }}>
+            <CardGroup className='my-5 mx-auto' style={{ width: '18rem', height: "400px", textAlign: "center" }}>
                 <Card >
                     <Card.Img style={{ width: '18rem', height: "250px" }} variant="top" src={picture} />
                     <Card.Body>
