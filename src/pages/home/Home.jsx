@@ -9,6 +9,7 @@ import './Home.css';
 import CoreFeatures from './coreFeatures/CoreFeatures.jsx';
 import Chefs from './topChefs/Chefs.jsx';
 const Home = () => {
+
     return (
         <div>
             <div className='banner-section'>

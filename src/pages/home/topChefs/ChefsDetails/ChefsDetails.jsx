@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 
 
 const ChefsDetails = ({ chef }) => {
-    console.log(chef);
+    // console.log(chef);
     const { id, name, picture } = chef;
+
     return (
         <Col>
             <CardGroup className='my-5 ' style={{ width: '18rem', height: "400px" }}>
@@ -22,7 +23,7 @@ const ChefsDetails = ({ chef }) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer className='p-0'>
-                        <Link to='/id'><Button style={{ borderRadius: " 0px 0px 8px 8px" }} variant="primary" className='w-100'>
+                        <Link to={`/chefs/${id}`}><Button style={{ borderRadius: " 0px 0px 8px 8px" }} variant="primary" className='w-100'>
                             view Recipes
                         </Button></Link>
                     </Card.Footer>

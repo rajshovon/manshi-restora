@@ -1,12 +1,16 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 const SngleChefs = () => {
-    const chefsSingleDetails = useLoaderData();
-    console.log(chefsSingleDetails);
+    const newsDetails = useLoaderData();
+    const { id } = useParams();
+    const categoryNews = useLoaderData();
+    console.log(newsDetails, categoryNews, id);
+
     return (
         <div>
             <h1>this is SngleChefs</h1>
+            {newsDetails.length}
         </div>
     );
 };

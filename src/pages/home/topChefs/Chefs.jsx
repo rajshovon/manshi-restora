@@ -13,7 +13,7 @@ const Chefs = () => {
             .then(data => setChefs(data))
             .catch(error => console.log(error))
     }, []);
-    console.log(chefs);
+
     return (
         <div>
             <div className='w-50 mx-auto text-center my-5 py-5'>

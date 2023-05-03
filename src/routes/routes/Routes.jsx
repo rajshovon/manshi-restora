@@ -3,7 +3,6 @@ import {
 } from "react-router-dom";
 import Chefs_Layout from "../../layout/Chefs_Layout.jsx";
 import Home from "../../pages/home/Home.jsx";
-import Chefs from "../../pages/home/topChefs/Chefs.jsx";
 import Login from "../../pages/login/Login.jsx";
 import Registration from "../../pages/registration/Registration.jsx";
 import Main from './../../layout/Main';
@@ -25,18 +24,15 @@ const router = createBrowserRouter([
             }, {
                 path: 'register',
                 element: <Registration></Registration>
-            }, {
-                path: 'chefs',
-                element: <Chefs></Chefs>,
             }
         ]
 
     }, {
-        path: "chefs_details",
+        path: "chefs",
         element: <Chefs_Layout></Chefs_Layout>,
         children: [
             {
-                path: '/chefs_details/:id',
+                path: '/chefs/:id',
                 element: <SngleChefs></SngleChefs>,
                 loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
             }
