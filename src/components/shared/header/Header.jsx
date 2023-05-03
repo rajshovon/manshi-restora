@@ -37,7 +37,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#">
-                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi'><Image src='https://i.ibb.co/J3yppZL/namshi.png' /></Link>
+                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi'><Image loading="lazy" src='https://i.ibb.co/J3yppZL/namshi.png' /></Link>
                         {/* <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black'>man<span className='text-danger'>shi</span></Link> */}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -55,7 +55,7 @@ const Header = () => {
                         </Nav>
                         <Nav className=' d-flex justify-content-center align-items-center  fw-semibold'>
                             {user &&
-                                <Link className='text-decoration-none text-dark fw-semibold'><Image style={{ width: "32px", height: "32px" }} src={user.photoURL} roundedCircle /></Link>
+                                <Link className='text-decoration-none text-dark fw-semibold'><Image loading="lazy" style={{ width: "32px", height: "32px" }} src={user.photoURL} roundedCircle /></Link>
                             }
 
                             {user ?

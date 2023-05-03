@@ -16,7 +16,7 @@ const CoreFeatures = () => {
             {
                 categories.map(categorie => <div className="border gap-3 frture-food my-2" key={categorie.id}>
 
-                    <Image style={{ width: "32px", height: "32px" }} src={categorie.img} />
+                    <Image loading="lazy" style={{ width: "32px", height: "32px" }} src={categorie.img} />
 
                     <span className="px-2"> {categorie.name}</span>
                 </div>)

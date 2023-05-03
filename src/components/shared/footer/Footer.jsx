@@ -58,7 +58,7 @@ const Footer = () => {
                     </Col>
                     <Col sm>
                         <h3 className='text-white' style={{ fontFamily: "cursive" }}>Instagram Gallery</h3>
-                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi py-4 m-4'><Image src='https://i.ibb.co/4M4CmKR/fbg.png' /></Link>
+                        <Link to='/' className='text-uppercase text-decoration-none fw-bold text-black logo-manshi py-4 m-4'><Image loading="lazy" src='https://i.ibb.co/4M4CmKR/fbg.png' /></Link>
                     </Col>
                     <Col sm>
                         <h3 className='text-white' style={{ fontFamily: "cursive" }}>Contact Us</h3>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaBookmark ,FaRegBookmark } from "react-icons/fa";
 import { Link, useLoaderData } from 'react-router-dom';
 
 
@@ -15,6 +15,9 @@ const SngleChefs = () => {
     console.log(recipes[0].instructions);
     const recipys = recipes[0].ingredients;
     const instructions = recipes[0].instructions
+    const [bookmark, setBookmark] = useState(false);
+
+    const onClick = () => setBookmark(true);
 
 
 
@@ -52,14 +55,21 @@ const SngleChefs = () => {
             <Container className="my-5">
                 <Row>
                     <Col sm={4} >
-                        <Image style={{ width: "350px", height: "350px", marginTop: "-200px", position: "absolute" }} src={picture} roundedCircle />
-                        <Image style={{ width: "350px", height: "350px", marginTop: "200px", position: "absolute" }} src={pictureRecipe} roundedCircle />
+                        <Image loading="lazy" style={{ width: "250px", height: "250px", marginTop: "-160px", position: "absolute" }} src={picture} roundedCircle />
+                        <Image loading="lazy" style={{ width: "350px", height: "350px", marginTop: "200px", position: "absolute" }} src={pictureRecipe} roundedCircle />
 
                     </Col>
                     <Col>
                         <Card>
                             <Card.Body>
-                                <Card.Title>{name}</Card.Title>
+                                <Card.Title className='d-flex justify-content-between'>
+                                    <div>
+                                        {name}
+                                    </div>
+                                    <div onClick={onClick}>
+                                        {bookmark ? <FaBookmark style={{ color: "yellow"}} /> : <FaRegBookmark style={{ cursor: "pointer" }} />}
+                                    </div>
+                                </Card.Title>
                                 <Card.Subtitle className="d-flex w-50 justify-content-around align-items-center py-4 mb-2 text-muted">
                                     <div className='py-2'>
                                         <div className='py-2'><span>Experience of Year </span>{yearsOfExperience}</div>

@@ -35,7 +35,7 @@ const ServicesTable = () => {
                         <div className="my-2  text-center gap-3">
                             {
                                 categories.map(categorie => <Link to={categorie.path} className="border d-block text-decoration-none gap-3 frture-food my-2" key={categorie.id}>
-                                    <Image className='' style={{ width: "32px", height: "32px" }} src={categorie.img} />
+                                    <Image loading="lazy" className='' style={{ width: "32px", height: "32px" }} src={categorie.img} />
                                     <span className="px-2"> {categorie.name}</span>
                                 </Link>)
                             }
