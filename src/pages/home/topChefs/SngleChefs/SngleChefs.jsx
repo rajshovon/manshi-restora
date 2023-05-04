@@ -5,8 +5,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { FaArrowLeft, FaBookmark ,FaRegBookmark } from "react-icons/fa";
+import { FaArrowLeft, FaBookmark, FaRegBookmark } from "react-icons/fa";
 import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const SngleChefs = () => {
@@ -17,7 +20,10 @@ const SngleChefs = () => {
     const instructions = recipes[0].instructions
     const [bookmark, setBookmark] = useState(false);
 
-    const onClick = () => setBookmark(true);
+    const onClick = () => {
+        toast("Bookmark Successfuly");
+        setBookmark(true)
+    };
 
 
 
@@ -67,7 +73,8 @@ const SngleChefs = () => {
                                         {name}
                                     </div>
                                     <div onClick={onClick}>
-                                        {bookmark ? <FaBookmark style={{ color: "yellow"}} /> : <FaRegBookmark style={{ cursor: "pointer" }} />}
+                                        <ToastContainer />
+                                        {bookmark ? <FaBookmark style={{ color: "yellow" }} /> : <FaRegBookmark style={{ cursor: "pointer" }} />}
                                     </div>
                                 </Card.Title>
                                 <Card.Subtitle className="d-flex w-50 justify-content-around align-items-center py-4 mb-2 text-muted">
