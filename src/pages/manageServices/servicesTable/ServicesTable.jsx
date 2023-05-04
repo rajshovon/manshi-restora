@@ -12,13 +12,13 @@ const ServicesTable = () => {
     const [categories, setCategories] = useState([])
     const [qpfooddetails, setQpfooddetails] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/qpfood')
+        fetch('https://manshi-restora-server.vercel.app/qpfood')
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(error => console.log(error))
     }, []);
     useEffect(() => {
-        fetch('http://localhost:5000/qpfooddetails')
+        fetch('https://manshi-restora-server.vercel.app/qpfooddetails')
             .then(res => res.json())
             .then(data => setQpfooddetails(data))
             .catch(error => console.log(error));

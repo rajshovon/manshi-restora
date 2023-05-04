@@ -16,7 +16,7 @@ const Header = () => {
 
     const [navItems, setNavItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/headernavbar')
+        fetch('https://manshi-restora-server.vercel.app/headernavbar')
             .then(res => res.json())
             .then(data => setNavItems(data))
             .catch(error => console.log(error))

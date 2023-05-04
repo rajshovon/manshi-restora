@@ -5,7 +5,7 @@ import './CoreFeatures.css';
 const CoreFeatures = () => {
     const [categories, setCategories] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/foodcategory')
+        fetch('https://manshi-restora-server.vercel.app/foodcategory')
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(error => console.log(error))

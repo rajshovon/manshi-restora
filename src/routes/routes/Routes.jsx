@@ -2,7 +2,6 @@ import {
     createBrowserRouter
 } from "react-router-dom";
 import Chefs_Layout from "../../layout/Chefs_Layout.jsx";
-import LoginLayout from "../../layout/LoginLayout.jsx";
 import About from "../../pages/About/About.jsx";
 import Blog from "../../pages/Blog/Blog.jsx";
 import Contact from "../../pages/Contact/Contact.jsx";
@@ -18,7 +17,7 @@ import SngleChefs from './../../pages/home/topChefs/SngleChefs/SngleChefs';
 
 
 const router = createBrowserRouter([
-    
+
 
     {
         path: "/",
@@ -65,7 +64,7 @@ const router = createBrowserRouter([
             {
                 path: '/chefs/:id',
                 element: <PrivateRoute><SngleChefs></SngleChefs></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader: ({ params }) => fetch(`https://manshi-restora-server.vercel.app/chefs/${params.id}`)
             }
         ]
 

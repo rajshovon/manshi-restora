@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation()
     console.log(location);
     if (loader) {
-        return <div className='w-100 h-100 d-flex justify-content-center align-items-center '><Image loading="lazy" src='https://media.tenor.com/je-huTL1vwgAAAAi/loading-buffering.gif' /></div>
+        return <div style={{ height: '80vh' }} className='w-100 d-flex justify-content-center align-items-center '><Image loading="lazy" src='https://media.tenor.com/je-huTL1vwgAAAAi/loading-buffering.gif' /></div>
     };
     if (user) {
         return children;
