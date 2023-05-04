@@ -68,9 +68,7 @@ const Registration = () => {
 
             })
             .catch(error => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
+                console.log(error);
             })
 
 
@@ -85,7 +83,7 @@ const Registration = () => {
             <div className='login-banner-section'>
             </div>
             <div className='d-flex justify-content-center align-items-center py-5' style={{ backgroundColor: "rgba(0,0,255,.1)" }}>
-                <div className='w-50 bg-white p-5 py-5 rounded' >
+                <div className='login-section bg-white p-5 py-5 rounded' >
                     <h5 className='text-center fs-2 fw-bold'>Register your account</h5>
                     <hr />
                     <Form onSubmit={handlerSingUp} className="w-75 mx-auto">

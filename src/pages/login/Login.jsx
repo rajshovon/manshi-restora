@@ -87,7 +87,7 @@ const Login = () => {
             <div className='login-banner-section'>
             </div>
             <div className='d-flex justify-content-center align-items-center' style={{ height: "100vh", backgroundColor: "rgba(0,0,255,.1)" }}>
-                <div className='w-50 bg-white p-5 rounded' >
+                <div className='login-section bg-white p-5 rounded' >
                     <h5 className='text-center fs-2 fw-bold'>Login your account</h5>
                     <hr />
                     <Form onSubmit={handlerSingin} className="w-75 mx-auto">

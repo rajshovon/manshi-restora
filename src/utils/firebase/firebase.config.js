@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAS_-J7HQXCNu3Snuj2XLyJr1uDEEgx3vI",
-  authDomain: "manshi-restora.firebaseapp.com",
-  projectId: "manshi-restora",
-  storageBucket: "manshi-restora.appspot.com",
-  messagingSenderId: "674628618052",
-  appId: "1:674628618052:web:7cd2ae03d640e3948ab911"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
