@@ -2,7 +2,7 @@
 # This is Manshi Restora
 
 
-Markup :  [Live Link](https://manshi-restora.web.app/) "manshi restora"
+Markup :  [Live Link](https://manshi-restora.web.app/) "manshi restora" and https://manshi-restora.web.app/
 
 
 Markup : ![This is Home page](https://i.ibb.co/zXyVzTS/manshi-restora-home-pages.png) "This is Home page"
